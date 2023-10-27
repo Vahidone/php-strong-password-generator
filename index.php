@@ -1,16 +1,6 @@
 <?php
 
-function generateRandomPassword($length) {
-  $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?';
-  $password = '';
-  $chars_length = strlen($chars);
-
-  for ($i = 0; $i < $length; $i++) {
-    $password .= $chars[rand(0, $chars_length - 1)];
-  }
-
-  return $password;
-}
+require_once __DIR__ . '/partials/functions.php';
 
 
 $message = "Scegliere una password con un minimo di 8 caratteri e un massimo di 32 caratteri";
