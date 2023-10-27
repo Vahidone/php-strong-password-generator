@@ -1,25 +1,22 @@
-
-
-
-
 <?php
 
 require_once __DIR__ . '/partials/functions.php';
 
 session_start();
 
-if(isset($_POST['numero']) && $_POST['numero'] >= 8 && $_POST['numero'] <= 32) {
-    $password = generateRandomPassword($_POST['numero']);
-    $_SESSION['password'] = $password;
-    header("Location: success-page.php");
-    exit();
+if(isset($_POST['numero'])) {
+    if($_POST['numero'] >= 8 && $_POST['numero'] <= 32) {
+        $password = generateRandomPassword($_POST['numero']);
+        $_SESSION['password'] = $password;
+        header("Location: success-page.php");
+        exit();
+    } else {
+        $message = "Errore! La lunghezza della password deve essere compresa tra 8 e 32 caratteri.";
+    }
 } else {
-    $message = "Errore! La lunghezza della password deve essere compresa tra 8 e 32 caratteri.";
+    $message = "Scegliere una password con un minimo di 8 caratteri e un massimo di 32 caratteri";
 }
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,9 +40,11 @@ if(isset($_POST['numero']) && $_POST['numero'] >= 8 && $_POST['numero'] <= 32) {
   <div class="container text-center">
     <h1>Strong Password Generator</h1>
     <h2>Genera una password sicura</h2>
+    <?php if (!isset($_POST['numero']) || (isset($_POST['numero']) && ($_POST['numero'] < 8 || $_POST['numero'] > 32))) { ?>
     <div class="message-box">
       <p><?php echo $message ?></p>
     </div>
+    <?php } ?>
 
     <div class="form-container">
       <form action="index.php" method="POST">
