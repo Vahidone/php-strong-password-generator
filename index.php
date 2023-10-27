@@ -1,18 +1,21 @@
+
+
+
+
 <?php
 
 require_once __DIR__ . '/partials/functions.php';
 
-
-$message = "Scegliere una password con un minimo di 8 caratteri e un massimo di 32 caratteri";
-
+session_start();
 
 if(isset($_POST['numero']) && $_POST['numero'] >= 8 && $_POST['numero'] <= 32) {
     $password = generateRandomPassword($_POST['numero']);
-    $message = "La password generata è: $password";
+    $_SESSION['password'] = $password;
+    header("Location: success-page.php");
+    exit();
 } else {
     $message = "Errore! La lunghezza della password deve essere compresa tra 8 e 32 caratteri.";
 }
-
 ?>
 
 
