@@ -33,7 +33,7 @@ if(isset($_SESSION['password'])) {
     <div class="my-container text-center">
       <h2 class="text-white fs-1">La password generata è:</h2>
       <div class="result ">
-        <p class="fs-3"><?php echo $password ?></p>
+        <p class="fs-3 fw-bold "><?php echo $password ?></p>
       </div>
 
       <button class="btn btn-info my-5"><a href="./index.php" >Torna alla homepage</a></button>
