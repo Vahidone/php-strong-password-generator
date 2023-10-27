@@ -9,7 +9,6 @@ function generateRandomPassword($length) {
     $password = '';
     $chars_length = strlen($chars);
 
-    // Assicurati che la password contenga almeno una lettera minuscola, una maiuscola, un numero e un carattere speciale
     $password .= $uppercase[rand(0, strlen($uppercase) - 1)];
     $password .= $lowercase[rand(0, strlen($lowercase) - 1)];
     $password .= $numbers[rand(0, strlen($numbers) - 1)];
@@ -19,7 +18,6 @@ function generateRandomPassword($length) {
         $password .= $chars[rand(0, $chars_length - 1)];
     }
 
-    // Mischia la password per mescolare i caratteri
     $password = str_shuffle($password);
 
     return $password;
