@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: #0E0E0E;
+}
+
+.debug {
+  background-color: rgb(238, 177, 177);
+  border: 1px solid black;
+  min-height: 50px;
+}
+
+.hv-100 {
+  height: 100vh;
+}
+
+.my-container {
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+  background-color: #011632;
+  padding: 100px 70px;
+}
+.result {
+  width: 98%;
+  height: 90px;
+  margin: auto;
+  background-color: #CFF4FB;
+  color: #0D5161;
+  text-align: center;
+  line-height: 90px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
