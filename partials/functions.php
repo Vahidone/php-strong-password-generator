@@ -1,5 +1,4 @@
 <?php
-
 function generateRandomPassword($length) {
     $uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $lowercase = 'abcdefghijklmnopqrstuvwxyz';
@@ -24,3 +23,4 @@ function generateRandomPassword($length) {
 }
 
 ?>
+
