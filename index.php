@@ -40,13 +40,13 @@ if(isset($_POST['numero'])) {
   <div class="container text-center">
     <h1>Strong Password Generator</h1>
     <h2>Genera una password sicura</h2>
-    <?php if (!isset($_POST['numero']) || (isset($_POST['numero']) && ($_POST['numero'] < 8 || $_POST['numero'] > 32))) { ?>
+    
     <div class="message-box">
 
       <p><?php echo $message ?></p>
 
     </div>
-    <?php } ?>
+   
 
     <div class="form-container">
       <form action="index.php" method="POST">
