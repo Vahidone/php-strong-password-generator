@@ -2,11 +2,9 @@
 <?php
 session_start();
 if(isset($_SESSION['password'])) {
-    $password = $_SESSION['password'];
-    echo "La password generata è: $password";
-    unset($_SESSION['password']); // Rimuove la password dalla sessione una volta mostrata
+  $password = $_SESSION['password'];
 } else {
-    echo "Nessuna password generata. Si prega di tornare alla pagina principale.";
+  echo "Nessuna password generata. Si prega di tornare alla pagina principale.";
 }
 ?>
 
