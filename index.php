@@ -52,11 +52,11 @@ if(isset($_POST['numero'])) {
       <form action="index.php" method="POST">
         <div class="input-box mb-3 bg-light.bg-gradient">
           <label for="numero" class="form-label text-dark-gray w-50 fs-3 fw-bold text-start">Lunghezza password:</label>
-          <input type="number" class="form-control w-25 h-75 bg-white border border-secondary" name="numero" id="numero">
+          <input type="number" class="form-control w-25 h-75 bg-white border border-secondary" name="numero" id="numero" required>
 
           <div class="w-100 text-start mt-3">
             <button class="btn btn-primary me-2 fs-3 ">Invia</button> 
-            <button class="btn btn-secondary  fs-3">Annulla</button>
+            <button onclick="emptyInput()" class="btn btn-secondary fs-3">Annulla</button>
           </div>
           
         </div>
@@ -65,7 +65,13 @@ if(isset($_POST['numero'])) {
     </div>
   </div>
 
- 
+  <!-- aggiunto una funzione in js per poter svuotare il campo input con il pulsante "Annulla"  -->
+  <script>
+    function emptyInput() {
+      document.getElementById('numero').value = '';
+    }
+  </script>
+  
   
 </body>
 </html>
